@@ -1,0 +1,7 @@
+{
+  "name": "And Justice For All",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
