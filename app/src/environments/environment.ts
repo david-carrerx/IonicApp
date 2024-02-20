@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  FIREBASE_CONFIG:{
+    apiKey: "AIzaSyBxdAizm5bHnIWauDqOtD1vCU7ZJWonQs4",
+    authDomain: "soulsync-e857a.firebaseapp.com",
+    projectId: "soulsync-e857a",
+    storageBucket: "soulsync-e857a.appspot.com",
+    messagingSenderId: "465078683785",
+    appId: "1:465078683785:web:5b6e6d16ca473f40621e58",
+    measurementId: "G-4D923GFFHC"
+  }
 };
 
 /*
