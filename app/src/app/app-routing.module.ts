@@ -4,8 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login', // Redirige a la ruta de inicio de sesión por defecto
-    pathMatch: 'full' // Asegura que la redirección solo ocurra cuando la URL coincide exactamente
+    redirectTo: 'login',
+    pathMatch: 'full' 
   },
   {
     path: 'login',

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ export class RegisterPage {
   phone: string | undefined;
   role: string | undefined;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   register() {
     const userData = {
@@ -27,10 +28,13 @@ export class RegisterPage {
     this.http.post('http://localhost/api/post.php', userData)
       .subscribe((response) => {
         console.log('Registro exitoso', response);
-        // Aquí podrías manejar la respuesta del backend, como mostrar un mensaje de éxito al usuario
+        this.router.navigate(['/login']);
       }, (error) => {
         console.error('Error al registrar', error);
-        // Aquí podrías manejar el error, como mostrar un mensaje de error al usuario
       });
+  }
+
+  login() {
+    this.router.navigate(['/login']);
   }
 }
