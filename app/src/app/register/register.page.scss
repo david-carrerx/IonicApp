@@ -2,11 +2,6 @@
     --background: linear-gradient(to right, #8bd7f7, #f78be7);
 }
 
-ion-img{
-    width: 150px;
-    margin-left: 23%;
-}
-
 .custom-title{
     font-family: "Permanent Marker", cursive;
     font-weight: 800;
@@ -35,4 +30,8 @@ ion-img{
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: white; 
     font-weight: bold;
+}
+
+.custom-img{
+    width: 200px;
 }

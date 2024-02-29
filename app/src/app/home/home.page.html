@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
+    <ion-col size="12">
+      <ion-row>
+        <ion-col sizeMd="4" offsetMd="4">
+            <ion-img style="height: 50px;" src="assets/logo.png"></ion-img>
+            <ion-title class="custom-title">SoulSync</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="custom-background" [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!--<app-card></app-card>-->
+  <ion-card *ngFor="let appointment of appointments">
+    <ion-card-header>
+      <ion-card-title>Cita pendiente</ion-card-title>
+      <ion-card-subtitle>Paciente: {{ appointment.patient }}</ion-card-subtitle>
+      <ion-card-subtitle>Fecha: {{ appointment.date}}</ion-card-subtitle>
+      <ion-card-subtitle>Hora: {{ appointment.hour }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ appointment.notes }}
+    </ion-card-content>
+  
+    <ion-button fill="clear">Listo</ion-button>
+    <ion-button fill="clear" (click)="deleteAppointment(appointment.appointment_id)">Eliminar</ion-button>
+  </ion-card>
+</ion-content>
+

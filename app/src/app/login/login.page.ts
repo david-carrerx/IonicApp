@@ -32,10 +32,11 @@ export class LoginPage implements OnInit {
         console.log(response);
         if (PASSWORD == this.password) {
           // Credenciales válidas, redirigir al usuario al "home"
-          this.router.navigate(['/register']);
+          this.router.navigate(['/home']);
         } else {
           // Credenciales inválidas, mostrar un mensaje de error o tomar otra acción apropiada
           console.error(response.message);
+          console.log("messi");
         }
       },
       (error) => {

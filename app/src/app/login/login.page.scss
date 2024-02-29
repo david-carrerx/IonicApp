@@ -25,10 +25,9 @@
     font-weight: bold;
 }
 
-ion-img{
-   width: 300px;
-   margin-left: 12%;
-  }
+.custom-img ion-img {
+    background-color: rgba(255, 255, 255, 0);
+}
 
 .custom-input{
     --background: linear-gradient(to right, #8bd7f7, #f78be7);
