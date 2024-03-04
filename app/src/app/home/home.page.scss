@@ -1,11 +1,43 @@
+.custom-background {
+    --background: #ffffff;
+}
+
 .custom-toolbar{
+    --background: linear-gradient(to right, #8bd7f7, #f78be7);
+    height: 90px;
+}
+
+.custom-card{
+    --background: linear-gradient(to right, #8bd7f7, #f78be7);
+}
+
+.custom-button{
+    background: none;
+}
+
+.custom-label{
+    color: white;
+    font-weight: bold;
+}
+
+.custom-text{
+    color: white;
+    font-weight: normal;
+}
+
+.custom-tabs{
     --background: linear-gradient(to right, #8bd7f7, #f78be7);
 }
 
 .custom-title{
     font-family: "Permanent Marker", cursive;
-    font-weight: 800;
+    font-weight: 400;
     font-style: normal;
     text-align: center;
     font-size: 20px;
+    margin-top: 0;
+}
+
+.custom-content{
+    overflow-y: auto;
 }
