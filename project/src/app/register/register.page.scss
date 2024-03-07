@@ -1,0 +1,37 @@
+.custom-background{
+    --background: linear-gradient(to right, #8bd7f7, #f78be7);
+}
+
+.custom-title{
+    font-family: "Permanent Marker", cursive;
+    font-weight: 800;
+    font-style: normal;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.custom-input{
+    --background: linear-gradient(to right, #8bd7f7, #f78be7);
+    --highlight-color-focused: transparent;
+    --border-color: transparent;
+    margin-top: 0;
+}
+
+.custom-primary {
+    --background: linear-gradient(to right, #8bd7f7, #f78be7);
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: white; 
+    font-weight: bold;
+  }
+
+.custom-login {
+    --background: #8bd7f7;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white; 
+    font-weight: bold;
+}
+
+.custom-img{
+    width: 200px;
+}

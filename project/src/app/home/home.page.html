@@ -16,17 +16,35 @@
       <ion-title size="large">home</ion-title>
     </ion-toolbar>
   </ion-header>
-
+  <!--<app-card></app-card>-->
+  <ion-list class="custom-background">
+    <ion-card class="custom-card" *ngFor="let appointment of appointments">
+      <ion-card-header>
+        <ion-card-title class="custom-label">Cita pendiente</ion-card-title>
+        <ion-card-subtitle class="custom-label">Paciente: <span class="custom-text">{{ appointment.patient }}</span></ion-card-subtitle>
+        <ion-card-subtitle class="custom-label">Fecha: <span class="custom-text">{{ appointment.date }}</span></ion-card-subtitle>
+        <ion-card-subtitle class="custom-label">Hora: <span class="custom-text">{{ appointment.hour }}</span></ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content class="custom-text">
+        {{ appointment.notes }}
+      </ion-card-content>
+    
+      <ion-button color="success" fill="clear">Listo</ion-button>
+      <ion-button color="danger" fill="clear" (click)="deleteAppointment(appointment.appointment_id)">Eliminar</ion-button>
+    </ion-card>
+  </ion-list>
 </ion-content>
+
 
 <ion-tabs>
   <ion-tab-bar class="custom-tabs" slot="bottom">
-    <ion-tab-button class="custom-button" tab="appointments">
+    <ion-tab-button class="custom-button" tab="tab1" href="/tabs/tab1">
       <ion-icon name="calendar-number-outline" class="custom-label"></ion-icon>
       <ion-label class="custom-label">Appointments</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button class="custom-button" tab="tab2">
+    <ion-tab-button class="custom-button" tab="tab2" href="/tabs/tab2">
       <ion-icon name="home-outline" class="custom-label"></ion-icon>
       <ion-label class="custom-label">Home</ion-label>
     </ion-tab-button>
@@ -36,4 +54,7 @@
       <ion-label class="custom-label">User</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
+
 </ion-tabs>
+
+
