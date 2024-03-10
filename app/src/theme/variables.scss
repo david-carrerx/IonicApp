@@ -1,6 +1,7 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -20,12 +21,12 @@
   --ion-color-secondary-tint: #50c8ff;
 
   /** tertiary **/
-  --ion-color-tertiary: #5260ff;
+  --ion-color-tertiary: #f78be7;
   --ion-color-tertiary-rgb: 82, 96, 255;
   --ion-color-tertiary-contrast: #ffffff;
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #4854e0;
-  --ion-color-tertiary-tint: #6370ff;
+  --ion-color-tertiary-shade: #f78be7;
+  --ion-color-tertiary-tint: #f78be7;
 
   /** success **/
   --ion-color-success: #2dd36f;
@@ -97,7 +98,7 @@
     --ion-color-secondary-shade: #46b0e0;
     --ion-color-secondary-tint: #62ceff;
 
-    --ion-color-tertiary: #6a64ff;
+    --ion-color-tertiary: #f78be7;
     --ion-color-tertiary-rgb: 106,100,255;
     --ion-color-tertiary-contrast: #ffffff;
     --ion-color-tertiary-contrast-rgb: 255,255,255;
@@ -241,4 +242,13 @@ html {
    * https://ionicframework.com/docs/layout/dynamic-font-scaling
    */
   --ion-dynamic-font: var(--ion-default-dynamic-font);
+  .custom-loading .loading-message {
+    color: red; /* Cambiar el color del mensaje de carga */
+  }
+  
+  .custom-toast {
+    --background: green; /* Cambiar el color de fondo del toast */
+    --color: white; /* Cambiar el color del texto del toast */
+  }
+  
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { InteractionService } from '../services/interaction.service';
+
 
 @Component({
   selector: 'app-login',
@@ -11,9 +14,31 @@ export class LoginPage implements OnInit {
   email: string | undefined;
   password: string | undefined;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private auth: AuthService, private interaction: InteractionService) { }
 
   ngOnInit() {
+  }
+
+  credentials = {
+    email: '',
+    password: ''
+  }
+
+  async loginFireBase(){
+    await this.interaction.presentLoading('Loading...');
+    console.log('credentials: -> ', this.credentials);
+    const res = await this.auth.login(this.credentials.email, this.credentials.password).catch(error =>{
+      console.log('error');
+      this.interaction.closeLoading();
+      this.interaction.presentToast('User or password incorrect');
+    })
+    if (res){
+      console.log(res);
+      this.interaction.presentToast('Authentication successful');
+      this.router.navigate(['/home']);
+      this.interaction.closeLoading();
+
+    }
   }
 
   login() {
