@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { User } from '../models/models';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,9 @@ export class AuthService {
 
   logout(){
     this.authfirebase.signOut();
+  }
+
+  register(data: User){
+    return this.authfirebase.createUserWithEmailAndPassword(data.email, data.password);
   }
 }
