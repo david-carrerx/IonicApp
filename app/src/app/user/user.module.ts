@@ -16,4 +16,6 @@ import { ComponentsModule } from '../components/components.module';
   ],
   declarations: [UserPage]
 })
-export class UserPageModule {}
+export class UserPageModule {
+  
+}

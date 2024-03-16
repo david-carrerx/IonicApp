@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { InteractionService } from '../services/interaction.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,20 +12,26 @@ import { InteractionService } from '../services/interaction.service';
 export class LoginPage implements OnInit {
   email: string | undefined;
   password: string | undefined;
+  name: string | undefined;
 
-  constructor(private http: HttpClient, private router: Router, private auth: AuthService, private interaction: InteractionService) { }
+  constructor(private http: HttpClient, private router: Router, private auth: AuthService, private interaction: InteractionService) {
+    
+  }
 
   ngOnInit() {
   }
 
   credentials = {
     email: '',
-    password: ''
+    password: '',
+    name: ''
   }
 
   async loginFireBase(){
     await this.interaction.presentLoading('Loading...');
     console.log('credentials: -> ', this.credentials);
+    console.log('credenssstials: -> ', this.auth.stateUser());
+
     const res = await this.auth.login(this.credentials.email, this.credentials.password).catch(error =>{
       console.log('error');
       this.interaction.closeLoading();

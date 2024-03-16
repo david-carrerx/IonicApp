@@ -1,28 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>user</ion-title>
+    <ion-title>Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="image-container">
     <ion-avatar>
-      <img style="width: 150px; height: 70px;" alt="Silhouette of a person's head" src="assets/profile.jpg"/>
+      <img style="width: 150px; height: 70px;" alt="Silueta de la cabeza de una persona" src="assets/profile.jpg"/>
     </ion-avatar>
   </div>
-  <ion-title class="custom-title">Bella Baxter</ion-title>
-  <ion-title class="custom-subtitle">Patient</ion-title>
+  <ion-title class="custom-title">{{ currentUser?.name }}</ion-title>
+  <ion-title class="custom-subtitle">{{ currentUser?.role }}</ion-title>
   <ion-title class="custom-label">Email</ion-title>
-  <ion-title class="custom-text">bella&#64;gmail.com</ion-title>
-  <ion-title class="custom-label">Phone number</ion-title>
-  <ion-title class="custom-text">+52 671 113 7152</ion-title>
-  <ion-title class="custom-label">Logout</ion-title>
+  <ion-title class="custom-text">{{ currentUser?.email }}</ion-title>
+  <ion-title class="custom-label">Número de teléfono</ion-title>
+  <ion-title class="custom-text">{{ currentUser?.phone }}</ion-title>
+  <ion-title class="custom-label">Cerrar sesión</ion-title>
   <div class="center-items">
     <ion-icon name="log-out-outline" class="custom-text" size="large" (click)="logout()"></ion-icon>
   </div>
-
-  <!--<div class="center-items">
-    <ion-icon name="create" class="custom-text" size="large"></ion-icon>
-  </div>-->
   <app-footer></app-footer>
 </ion-content>

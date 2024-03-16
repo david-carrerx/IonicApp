@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" *ngIf="login">
   <ion-toolbar class="custom-toolbar">
       <ion-row>
         <ion-col sizeMd="4" offsetMd="4">
@@ -10,7 +10,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="custom-background" [fullscreen]="true">
+<ion-content class="custom-background" [fullscreen]="true" *ngIf="login">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">home</ion-title>
@@ -19,7 +19,7 @@
 
 </ion-content>
 
-<ion-tabs>
+<ion-tabs *ngIf="login">
   <ion-tab-bar class="custom-tabs" slot="bottom">
     <ion-tab-button class="custom-button" tab="appointments">
       <ion-icon name="calendar-number-outline" class="custom-label"></ion-icon>

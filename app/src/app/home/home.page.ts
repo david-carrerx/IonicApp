@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentService } from 'src/app/services/appointment.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,20 @@ import { AppointmentService } from 'src/app/services/appointment.service';
 })
 export class HomePage implements OnInit {
   appointments: any[] = [];
+  login: boolean = false;
 
-  constructor(private appointmentService: AppointmentService) {}
+  constructor(private appointmentService: AppointmentService, private auth: AuthService) {
+    this.auth.stateUser().subscribe( res =>{
+      if(res){
+        console.log('User logeado');
+        this.login = true;
+      }
+      else{
+        console.log('User no logeado');
+        this.login = false;
+      }
+    })
+  }
 
   ngOnInit() {
     this.loadAppointments();
