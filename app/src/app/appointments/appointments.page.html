@@ -9,24 +9,43 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="custom-background" [fullscreen]="true">
-  <ion-list class="custom-background">
+  <ion-list class="custom-background" *ngIf="showForm==false">
     <ion-card class="custom-card" *ngFor="let appointment of appointments">
       <ion-card-header>
-        <ion-card-title class="custom-label">Cita pendiente</ion-card-title>
-        <ion-card-subtitle class="custom-label">Paciente: <span class="custom-text">{{ appointment.patient }}</span></ion-card-subtitle>
-        <ion-card-subtitle class="custom-label">Fecha: <span class="custom-text">{{ appointment.date }}</span></ion-card-subtitle>
-        <ion-card-subtitle class="custom-label">Hora: <span class="custom-text">{{ appointment.hour }}</span></ion-card-subtitle>
+        <ion-card-title class="custom-label">Pending appointment</ion-card-title>
+        <ion-card-subtitle class="custom-label">Patient: <span class="custom-text">{{ appointment.patient }}</span></ion-card-subtitle>
+        <ion-card-subtitle class="custom-label">Date: <span class="custom-text">{{ appointment.date }}</span></ion-card-subtitle>
+        <ion-card-subtitle class="custom-label">Hour: <span class="custom-text">{{ appointment.time }}</span></ion-card-subtitle>
       </ion-card-header>
     
       <ion-card-content class="custom-text">
         {{ appointment.notes }}
       </ion-card-content>
     
-      <ion-button class="custom-label" fill="clear"><ion-icon name="checkmark-outline"></ion-icon></ion-button>
-      <ion-button class="custom-text" fill="clear" (click)="deleteAppointment(appointment.appointment_id)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+      <ion-button class="custom-text" fill="clear" (click)="deleteAppointment(appointment)"><ion-icon name="trash-outline" ></ion-icon></ion-button>
     </ion-card>
   </ion-list>
 
-  <ion-button class="custom-add ion-justify-content-end" shape="round"><ion-icon name="add"></ion-icon></ion-button>
+  <ion-button (click)="showAddForm()" class="custom-add ion-justify-content-end" shape="round"><ion-icon name="add"></ion-icon></ion-button>
+
+  <ion-card *ngIf="showForm" class="custom-card">
+    <ion-card-header>
+      <ion-card-title class="custom-label">Add appointment</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-card-subtitle class="custom-label" position="stacked">Date</ion-card-subtitle>
+        <ion-input class="custom-text" type="date" [(ngModel)]="newAppointment.date" required></ion-input>
+        <ion-card-subtitle class="custom-label" position="stacked">Hour</ion-card-subtitle>
+        <ion-input class="custom-text" type="time" [(ngModel)]="newAppointment.time" required></ion-input>
+        <ion-card-subtitle class="custom-label" position="stacked">Patient</ion-card-subtitle>
+        <ion-input class="custom-text" type="text" [(ngModel)]="newAppointment.patient" required></ion-input>
+        <ion-card-subtitle class="custom-label" position="stacked">Therapist</ion-card-subtitle>
+        <ion-input class="custom-text" type="text" [(ngModel)]="newAppointment.therapist" required></ion-input>
+        <ion-card-subtitle class="custom-label" position="stacked">Notes</ion-card-subtitle>
+        <ion-textarea class="custom-text" [(ngModel)]="newAppointment.notes" required></ion-textarea>
+    </ion-card-content>
+    <ion-button class="custom-label custom-new" (click)="addAppointment()" expand="block">Add</ion-button>
+    <ion-button class="custom-label custom-new" (click)="cancelAddForm()" expand="block">Cancel</ion-button>
+  </ion-card>
   <app-footer></app-footer>
 </ion-content>
