@@ -1,0 +1,43 @@
+.custom-background {
+    background-color: #ffffff;
+}
+
+.custom-title {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 800;
+    font-style: normal;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #8bd7f7, #f78be7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.custom-list{
+    display: flex;
+    flex-direction: row;
+}
+
+.custom-card {
+    --background: linear-gradient(to right, #8bd7f7, #f78be7);
+    width: 300px;
+}
+
+.custom-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+  }
+
+.custom-label {
+    color: white;
+    font-weight: bold;
+}
+
+.custom-text {
+    color: white;
+    font-weight: normal;
+}
